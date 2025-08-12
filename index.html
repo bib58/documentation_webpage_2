@@ -174,13 +174,11 @@
                     current = section.id;
                 }
             });
-            if (window.innerWidth <= 768) {
-                const scrollBottom = window.innerHeight + window.scrollY; /* pixel position of the bottom edge of the viewport. */
-                const docHeight = document.documentElement.scrollHeight;
-                
-                if (scrollBottom >= docHeight) { 
-                    current = sections[sections.length - 1].id;
-                }
+            const scrollBottom = window.innerHeight + window.scrollY; /* pixel position of the bottom edge of the viewport. */
+            const docHeight = document.documentElement.scrollHeight;
+            
+            if (scrollBottom >= docHeight) { 
+                current = sections[sections.length - 1].id;
             }
             navLinks.forEach(link => {
                 link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
@@ -190,4 +188,5 @@
 </body>
 
 </html>
+
 
